@@ -155,66 +155,170 @@
 			"name": "Analytics",
 			"item": [
 				{
-					"name": "getSingleURL",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"type\": \"url\",\n    \"payload\": \"https://github.com/KausTarafdar/pocket-url\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "For ID",
+					"item": [
+						{
+							"name": "getShortURL",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"short\",\n    \"payload\": \"soLqVKcp\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/analytics/id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"analytics",
+										"id"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://localhost:5000/analytics/id",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"analytics",
-								"id"
-							]
+						{
+							"name": "getCustomURL",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"custom\",\n    \"payload\": \"4VKTQ9T2-this_project_on_github\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/analytics/id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"analytics",
+										"id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getURL",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"url\",\n    \"payload\": \"https://github.com/KausTarafdar/pocket-url\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/analytics/id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"analytics",
+										"id"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "getFrequency",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/analytics/frequency?type=Access&limit=10",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"analytics",
-								"frequency"
-							],
-							"query": [
-								{
-									"key": "type",
-									"value": "Access"
-								},
-								{
-									"key": "limit",
-									"value": "10"
+					"name": "Leaderboards",
+					"item": [
+						{
+							"name": "getAccess",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/analytics/frequency?type=Access&limit=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"analytics",
+										"frequency"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Access"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "getRecent",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/analytics/frequency?type=Recent&limit=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"analytics",
+										"frequency"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Recent"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				}
 			]
 		}
