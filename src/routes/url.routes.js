@@ -10,6 +10,6 @@ const router = express.Router();
 //URL Creation
 router.post('/short', handleShortGeneration);
 router.post('/custom', handleCustomGeneration);
-router.post('/qr-code', handleQrCode);
+router.get('/qr', handleQrCode);
 
 module.exports = router;

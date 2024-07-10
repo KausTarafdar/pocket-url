@@ -88,7 +88,6 @@ async function handleSingleAccessCount(req, res) {
 
 
     } catch (error) {
-        console.log(error.message);
         return res.status(400).json({error: "Internal Server Error"});
     }
 }
@@ -99,7 +98,6 @@ function getAnalytics(items) {
     var _updated = items[0].updatedAt;
 
     items.forEach(item => {
-        console.log(item.accessed);
         _accessed += item.accessed;
         if(_updated < item.updatedAt) _updated = item.updatedAt;
         if(_created > item.createdAt) _created = item.createdAt;

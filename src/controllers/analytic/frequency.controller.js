@@ -2,7 +2,7 @@ const Custom_URL = require("../../models/custom.db");
 const Short_URL = require("../../models/url.db");
 
 async function handleUsageFrequency(req, res) {
-    query = req.query.type;
+    query = req.query.type || 'access';
     limit = req.query.limit || 5;
     
     if(query.toLowerCase() === "access") {
@@ -35,7 +35,6 @@ async function handleUsageFrequency(req, res) {
             return res.status(200).json({access: valArr.slice(0, limit)});
 
         } catch (error) {
-            console.log(error.message)
             return res.status(500).json({error: 'Internal server error'});
         }
     }
@@ -66,7 +65,6 @@ async function handleUsageFrequency(req, res) {
 
             return res.status(200).json({ferqeuncy: valArr.slice(0,limit)});
         } catch (error) {
-            console.log(error.message)
             return res.status(500).json({error: 'Internal server error'});
         }
     }

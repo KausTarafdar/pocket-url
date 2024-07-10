@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "cb5bdd39-703e-465d-9ac4-071a6ab3d74e",
+		"name": "Pocket-URL",
+		"description": "An API service to shorten URL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30446940"
+	},
+	"item": [
+		{
+			"name": "Short",
+			"item": [
+				{
+					"name": "createShort",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://www.wolframalpha.com/\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/url/short",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"url",
+								"short"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getShort",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/hH8F9XFH",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"hH8F9XFH"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Custom",
+			"item": [
+				{
+					"name": "createCustom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\" : \"https://www.youtube.com\",\n    \"custom_phrase\": \"oowagadoogooo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/url/custom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"url",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/c/T5qxWvE7-Wolfram_Alpha",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"c",
+								"T5qxWvE7-Wolfram_Alpha"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "QR-Code",
+			"item": [
+				{
+					"name": "createQR",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://media.tenor.com/9mAYF-Tv_AkAAAAM/chibi-chibi-cat-chibi-chibi-chaba-chaba.gif\",\n    \"color\": \"#000000\",\n    \"size\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/url/qr",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"url",
+								"qr"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Analytics",
+			"item": [
+				{
+					"name": "getSingleURL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"url\",\n    \"payload\": \"https://github.com/KausTarafdar/pocket-url\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/analytics/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"analytics",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFrequency",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/analytics/frequency?type=Access&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"analytics",
+								"frequency"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "Access"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

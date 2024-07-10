@@ -4,7 +4,7 @@ const { handleUsageFrequency } = require("../controllers/analytic/frequency.cont
 
 const router = express.Router();
 
-router.get('/short', handleSingleAccessCount);
+router.get('/id', handleSingleAccessCount);
 router.get('/frequency', handleUsageFrequency);
 
 module.exports = router;

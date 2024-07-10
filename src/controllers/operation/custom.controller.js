@@ -15,7 +15,9 @@ async function handleCustomGeneration(req, res) {
             return res.status(400).json({error: "Invalid URL passed"});
         }
 
-        const customString = processString(req.body.custom)
+        const checkCustom = req.body.custom_phrase || " ";
+
+        const customString = processString(checkCustom);
 
         const shortID = ShortUrlGenerator(url, 8);
 
@@ -29,7 +31,7 @@ async function handleCustomGeneration(req, res) {
         await newEntry.save();
 
         return res.status(201).json({
-            short : customID, 
+            customURL : customID, 
             redirect : url
         });
 
