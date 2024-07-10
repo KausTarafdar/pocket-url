@@ -22,46 +22,11 @@ NodeJS Application written in Javascript
 
 #### **GET Routes for URLs**
 
-- `_baseURL_/:shortID` :- Redirects the given *shortID* to the  appropriate redirect URL provided. (*No Body*)
+- `_baseURL_/:shortID` :- Redirects the given *shortID* to the  appropriate redirect URL provided.
 
-- `_baseURL_/c/:customID` :- Redirects the given *customID* to the appropriate redirect URL provided. (*No Body*)
+- `_baseURL_/c/:customID` :- Redirects the given *customID* to the appropriate redirect URL provided.
 
-- `_baseURL_/url/qr` :- Returns an SVG of a QR code generated from the redirect URL provided.
-
-***Example Body :-***
-```js
-{
-    "url": "https://google.com"
-    "color": "#e43212" // default : #000000
-    "size": 12 // default : 10
-}
-```
-
-#### **GET Routes for analytics**
-
-- `_baseURL_/analytics/id` :- Provides information on *Number of Times Accessed*, *Creation timestamp* and *Most Recent access timestamp* for a single payload value.
-
-***Example Body :-***
-```js
-{
-    "type": "url" // short or custom or url
-    "payload": "https://github.com/KausTarafdar/pocket-url" // shortID or customID or URL_to_website
-}
-```
-
-- `_baseURL_/analytics/frequency?type={_Type}&limit={_Limit}` :- Provides an array of information related to the paramaters passed. (*No Body*)
-
-  `  _Type  ` <span style="font-size:0.8em;">default</span> *access*
-
-  - *access* - To get the array of most accessed URLs.
-  - *recent* - To get the array of most recently accessed URLs\
-
-
-  `  _Limit  ` <span style="font-size:0.8em;">default</span> *10*
-
-  To allow for *pagination* and let user to specify number of enteries required.
-
-#### **POST Routes**
+#### **POST Routes for URLs**
 
 - `_baseURL_/url/short`  :- Generates a shortID for a provided redirect URL.
 
@@ -79,6 +44,43 @@ Request :
 {
     "url": "https://github.com/KausTarafdar/pocket-url" // Redirect URL
     "custom_phrase": "Link to my project" // Phrase for the custom URL
+}
+```
+
+- `_baseURL_/url/qr` :- Returns an SVG of a QR code generated from the redirect URL provided.
+
+***Example Body :-***
+```js
+{
+    "url": "https://google.com"
+    "color": "#e43212" // default : #000000
+    "size": 12 // default : 10
+}
+```
+
+#### **GET Route for analytics**
+
+- `_baseURL_/analytics/frequency?type={_Type}&limit={_Limit}` :- Provides an array of information related to the paramaters passed. (*No Body*)
+
+  `  _Type  ` <span style="font-size:0.8em;">default</span> *access*
+
+  - *access* - To get the array of most accessed URLs.
+  - *recent* - To get the array of most recently accessed URLs\
+
+
+  `  _Limit  ` <span style="font-size:0.8em;">default</span> *10*
+
+  To allow for *pagination* and let user to specify number of enteries required.
+
+#### **POST Route for analytics**
+
+- `_baseURL_/analytics/id` :- Provides information on *Number of Times Accessed*, *Creation timestamp* and *Most Recent access timestamp* for a single payload value.
+
+***Example Body :-***
+```js
+{
+    "type": "url" // short or custom or url
+    "payload": "https://github.com/KausTarafdar/pocket-url" // shortID or customID or URL_to_website
 }
 ```
 
