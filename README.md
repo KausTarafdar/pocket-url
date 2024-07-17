@@ -4,7 +4,7 @@
 
 ***Deployed api*** :  https://poc-ket.onrender.com
 
-**URL shortener** is a service that converts long URLs into short aliases to save spacve when sharing URLs in messages, twitter, presentations, etc. The service redirects incoming short form URLs to the original URL.
+**URL shortener** is a service that converts long URLs into short aliases to save space when sharing URLs in messages, twitter, presentations, etc. The service redirects incoming short form URLs to the original URL.
 
 **Technologies Used**
 NodeJS Application written in Javascript
