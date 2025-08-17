@@ -2,7 +2,7 @@
 
 #### An API for URL shortening like tiny url using NodeJS.
 
-***Deployed api*** :  https://poc-ket.onrender.com
+***Deployed api base url*** :  https://poc-ket.onrender.com/
 
 **URL shortener** is a service that converts long URLs into short aliases to save space when sharing URLs in messages, twitter, presentations, etc. The service redirects incoming short form URLs to the original URL.
 
@@ -119,6 +119,7 @@ Starts the server using **nodemon** allowing the server to run constantly tracki
 ```sh
 npm start
 ```
+
 
 
 
